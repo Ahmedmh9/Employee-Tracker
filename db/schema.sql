@@ -1,13 +1,13 @@
-drop DATABASE IF EXISTS Employee-tracker_db;
-CREATE DATABASE Employee-tracker_db;
+DROP DATABASE IF EXISTS employee_db;
+CREATE DATABASE employee_db;
 
-USE Employee-tracker_db;
+USE employee_db;
 
-CREATE TABLE    departments (
-    id INT NOT NULL AUTO_INCREAMENT,
-    department varchar(30) not NULL,
-    PRIMARY KEY(id)
-)
+CREATE TABLE departments (
+    id INT NOT NULL AUTO_INCREMENT,
+    department VARCHAR(30) NOT NULL,
+    PRIMARY KEY (id)
+);
 CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT,
     title VARCHAR(30) NOT NULL,
@@ -17,7 +17,6 @@ CREATE TABLE roles (
     REFERENCES departments(id),
     PRIMARY KEY (id)
 );
-
 CREATE TABLE employees (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
